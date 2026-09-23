@@ -10,3 +10,7 @@ data/
 artifacts/
 tmp/
 *.log
+node_modules/
+web/dist/
+web/*.tsbuildinfo
+.pnpm-store/
