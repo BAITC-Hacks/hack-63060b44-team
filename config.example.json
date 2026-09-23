@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "inputs": {
+    "turbine_1": "data/raw/turbine_1.csv",
+    "turbine_2": "data/raw/turbine_2.csv"
+  },
+  "data": {
+    "timezone": "+05:00",
+    "min_hourly_samples": 5,
+    "target_min": 0.0,
+    "target_max": 1.0,
+    "supplemental_dir": "data/incoming"
+  },
+  "turbines": {
+    "turbine_1": {"latitude": 43.645150, "longitude": 78.535604, "map_source": "https://maps.app.goo.gl/iN6svMt69D5qRpFU9", "rated_power_mw": null},
+    "turbine_2": {"latitude": 43.643198, "longitude": 78.538828, "map_source": "https://maps.app.goo.gl/8UQMwsYavY6nLvFY8", "rated_power_mw": null}
+  },
+  "model": {
+    "train_days": 180,
+    "min_train_days": 30,
+    "seed": 42,
+    "n_estimators": 100,
+    "min_samples_leaf": 8
+  },
+  "weather": {
+    "provider": "noaa_gfs",
+    "grid": "1p00",
+    "publication_delay_hours": 6,
+    "max_workers": 4,
+    "retries": 3,
+    "timeout_seconds": 45,
+    "cache_dir": "data/weather",
+    "training_days": 45
+  },
+  "run": {"issue_hour_local": 23, "output_dir": "artifacts", "selection_file": "reports/model_selection.json"},
+  "assumptions": [
+    "CSV timestamps are fixed UTC+05:00 throughout; timezone was not supplied by organizers.",
+    "Each timestamp labels the START of a 10-minute interval; available at interval end.",
+    "Original observations are assumed available at interval end; original delivery logs do not exist.",
+    "Normalized active power is dimensionless in [0,1]; physical normalization and rated capacities are unknown.",
+    "farm_proxy is the equal-weight mean of the two normalized turbine outputs, not MW."
+  ]
+}

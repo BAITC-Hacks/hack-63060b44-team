@@ -1,0 +1,37 @@
+{
+  "checked_at": "2026-09-23T14:54:40.3415137+05:00",
+  "head": "53c18a881e27aa62477ae2bf3b455e6f7b054fb3",
+  "git_status": [
+    " M README.md",
+    "?? .gitattributes",
+    "?? .gitignore",
+    "?? config.example.json",
+    "?? docs/",
+    "?? pyproject.toml",
+    "?? reports/",
+    "?? requirements.lock",
+    "?? scripts/",
+    "?? tests/",
+    "?? windforecast/"
+  ],
+  "staged_paths": [],
+  "changed_existing_paths": [
+    ".gitignore",
+    "reports/results.md",
+    "scripts/check_reproduction.py",
+    "scripts/summarize_results.py",
+    "README.md"
+  ],
+  "deleted_existing_paths": [],
+  "new_paths": [
+    ".gitattributes",
+    "docs/handoff.md",
+    "reports/submission/checks.md",
+    "reports/submission/evidence_check.json",
+    "reports/submission/handoff_inventory.json",
+    "reports/submission/initial_state.json",
+    "reports/submission/reproduction_check.json"
+  ],
+  "forecasting_source_unchanged": true,
+  "scope": "Comparison against initial_state.json; final_state.json excludes itself. Ignored data/cache/snapshot integrity is recorded in handoff_inventory.json."
+}
