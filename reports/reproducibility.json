@@ -1,0 +1,1 @@
+{"idempotence": {"manifest_unchanged": true, "run_id": "a587f5347a6fc4512eec87fc", "same_directory": true}, "refits": [{"max_absolute_difference": 0.0, "run_id": "a587f5347a6fc4512eec87fc", "status": "reproduced"}, {"max_absolute_difference": 0.0, "run_id": "638d72d758e42d7cb5b6686d", "status": "reproduced"}], "test_suite": {"passed": 46, "subtests_passed": 9}}

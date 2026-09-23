@@ -1,0 +1,1 @@
+{"disjoint_target_times": true, "holdout_issue": "2026-01-29 18:00:00+00:00", "known_at": "2026-01-28 19:00:00+00:00", "note": "Chronological subset of the already saved folds; production selection is unchanged.", "selected_model": "extra_trees_weather", "validation_issues": "2026-01-22..2026-01-26"}

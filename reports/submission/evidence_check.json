@@ -1,0 +1,1761 @@
+{
+  "checked_at_utc": "2026-09-23T09:49:09.139527+00:00",
+  "scope": "Independent read-only recomputation from original CSV and saved forecasts; no model training, network requests, or original report writes. Numerical comparison tolerance 1e-12. Not a February accuracy test.",
+  "runtime": {
+    "python": "3.12.14",
+    "pandas": "3.0.6",
+    "numpy": "2.5.3"
+  },
+  "passed": true,
+  "check_count": 88,
+  "failed_checks": [],
+  "raw_data": {
+    "turbine_1": {
+      "rows": 142360,
+      "unique_timestamps": 142360,
+      "start_local": "2023-03-11 00:00:00",
+      "end_local": "2026-01-31 23:50:00",
+      "february_2026_rows": 0,
+      "missing_ten_minute_slots": 9992,
+      "longest_gap_hours": 998.8333333333334,
+      "valid_hourly_targets_5of6": 23706,
+      "valid_hourly_targets_6of6": 23667,
+      "sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b"
+    },
+    "turbine_2": {
+      "rows": 149499,
+      "unique_timestamps": 149499,
+      "start_local": "2023-03-11 00:00:00",
+      "end_local": "2026-01-31 23:50:00",
+      "february_2026_rows": 0,
+      "missing_ten_minute_slots": 2853,
+      "longest_gap_hours": 57.333333333333336,
+      "valid_hourly_targets_5of6": 24870,
+      "valid_hourly_targets_6of6": 24785,
+      "sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5"
+    }
+  },
+  "alignment": {
+    "shared_timestamps": 141357,
+    "only_turbine_1": 1003,
+    "only_turbine_2": 8142,
+    "union_timestamps": 150502,
+    "hourly_slots": 25392,
+    "valid_farm_proxy_hours": 23520
+  },
+  "validation": {
+    "validation_observations": {
+      "issues": 13,
+      "first_issue_utc": "2025-11-01T18:00:00+00:00",
+      "last_issue_utc": "2026-01-24T18:00:00+00:00",
+      "prediction_entity_rows": 3744,
+      "unique_target_hours": 624,
+      "coverage_threshold": 5,
+      "overall_metrics": [
+        {
+          "model": "extra_trees",
+          "entity": "farm_proxy",
+          "horizon": "all",
+          "n": 624,
+          "expected": 624,
+          "coverage": 1.0,
+          "mae": 0.28376147207109165,
+          "rmse": 0.330086267106511,
+          "bias": -0.0011304418882317308,
+          "nmae": 0.28376147207109165,
+          "nrmse": 0.330086267106511
+        },
+        {
+          "model": "extra_trees",
+          "entity": "turbine_1",
+          "horizon": "all",
+          "n": 624,
+          "expected": 624,
+          "coverage": 1.0,
+          "mae": 0.2828734907622362,
+          "rmse": 0.32963651174910474,
+          "bias": 0.0011407423465117396,
+          "nmae": 0.2828734907622362,
+          "nrmse": 0.32963651174910474
+        },
+        {
+          "model": "extra_trees",
+          "entity": "turbine_2",
+          "horizon": "all",
+          "n": 624,
+          "expected": 624,
+          "coverage": 1.0,
+          "mae": 0.2859695556771719,
+          "rmse": 0.3327236916647447,
+          "bias": -0.0034016261229752056,
+          "nmae": 0.2859695556771719,
+          "nrmse": 0.3327236916647447
+        },
+        {
+          "model": "persistence",
+          "entity": "farm_proxy",
+          "horizon": "all",
+          "n": 624,
+          "expected": 624,
+          "coverage": 1.0,
+          "mae": 0.3149172008547008,
+          "rmse": 0.42027791900393624,
+          "bias": -0.09059027777777781,
+          "nmae": 0.3149172008547008,
+          "nrmse": 0.42027791900393624
+        },
+        {
+          "model": "persistence",
+          "entity": "turbine_1",
+          "horizon": "all",
+          "n": 624,
+          "expected": 624,
+          "coverage": 1.0,
+          "mae": 0.31540331196581195,
+          "rmse": 0.4188436451824077,
+          "bias": -0.08529113247863249,
+          "nmae": 0.31540331196581195,
+          "nrmse": 0.4188436451824077
+        },
+        {
+          "model": "persistence",
+          "entity": "turbine_2",
+          "horizon": "all",
+          "n": 624,
+          "expected": 624,
+          "coverage": 1.0,
+          "mae": 0.31520032051282054,
+          "rmse": 0.4228402629818682,
+          "bias": -0.0958894230769231,
+          "nmae": 0.31520032051282054,
+          "nrmse": 0.4228402629818682
+        }
+      ]
+    },
+    "validation_coverage6": {
+      "issues": 13,
+      "first_issue_utc": "2025-11-01T18:00:00+00:00",
+      "last_issue_utc": "2026-01-24T18:00:00+00:00",
+      "prediction_entity_rows": 3744,
+      "unique_target_hours": 624,
+      "coverage_threshold": 6,
+      "overall_metrics": [
+        {
+          "model": "extra_trees",
+          "entity": "farm_proxy",
+          "horizon": "all",
+          "n": 624,
+          "expected": 624,
+          "coverage": 1.0,
+          "mae": 0.28508377105742444,
+          "rmse": 0.3309826407992286,
+          "bias": 0.0014221244402818833,
+          "nmae": 0.28508377105742444,
+          "nrmse": 0.3309826407992286
+        },
+        {
+          "model": "extra_trees",
+          "entity": "turbine_1",
+          "horizon": "all",
+          "n": 624,
+          "expected": 624,
+          "coverage": 1.0,
+          "mae": 0.2835691619791362,
+          "rmse": 0.3302719469327216,
+          "bias": -0.0012021466619217412,
+          "nmae": 0.2835691619791362,
+          "nrmse": 0.3302719469327216
+        },
+        {
+          "model": "extra_trees",
+          "entity": "turbine_2",
+          "horizon": "all",
+          "n": 624,
+          "expected": 624,
+          "coverage": 1.0,
+          "mae": 0.28757159415213185,
+          "rmse": 0.33426964308259294,
+          "bias": 0.004046395542485506,
+          "nmae": 0.28757159415213185,
+          "nrmse": 0.33426964308259294
+        },
+        {
+          "model": "persistence",
+          "entity": "farm_proxy",
+          "horizon": "all",
+          "n": 624,
+          "expected": 624,
+          "coverage": 1.0,
+          "mae": 0.3149172008547008,
+          "rmse": 0.42027791900393624,
+          "bias": -0.09059027777777781,
+          "nmae": 0.3149172008547008,
+          "nrmse": 0.42027791900393624
+        },
+        {
+          "model": "persistence",
+          "entity": "turbine_1",
+          "horizon": "all",
+          "n": 624,
+          "expected": 624,
+          "coverage": 1.0,
+          "mae": 0.31540331196581195,
+          "rmse": 0.4188436451824077,
+          "bias": -0.08529113247863249,
+          "nmae": 0.31540331196581195,
+          "nrmse": 0.4188436451824077
+        },
+        {
+          "model": "persistence",
+          "entity": "turbine_2",
+          "horizon": "all",
+          "n": 624,
+          "expected": 624,
+          "coverage": 1.0,
+          "mae": 0.31520032051282054,
+          "rmse": 0.4228402629818682,
+          "bias": -0.0958894230769231,
+          "nmae": 0.31520032051282054,
+          "nrmse": 0.4228402629818682
+        }
+      ]
+    },
+    "validation_weather": {
+      "issues": 7,
+      "first_issue_utc": "2026-01-22T18:00:00+00:00",
+      "last_issue_utc": "2026-01-28T18:00:00+00:00",
+      "prediction_entity_rows": 3024,
+      "unique_target_hours": 192,
+      "coverage_threshold": 5,
+      "overall_metrics": [
+        {
+          "model": "extra_trees",
+          "entity": "farm_proxy",
+          "horizon": "all",
+          "n": 336,
+          "expected": 336,
+          "coverage": 1.0,
+          "mae": 0.32531204184338325,
+          "rmse": 0.37831080399271283,
+          "bias": -0.0432981526473219,
+          "nmae": 0.32531204184338325,
+          "nrmse": 0.37831080399271283
+        },
+        {
+          "model": "extra_trees",
+          "entity": "turbine_1",
+          "horizon": "all",
+          "n": 336,
+          "expected": 336,
+          "coverage": 1.0,
+          "mae": 0.33476504298911847,
+          "rmse": 0.3891095334192484,
+          "bias": -0.05245155467141117,
+          "nmae": 0.33476504298911847,
+          "nrmse": 0.3891095334192484
+        },
+        {
+          "model": "extra_trees",
+          "entity": "turbine_2",
+          "horizon": "all",
+          "n": 336,
+          "expected": 336,
+          "coverage": 1.0,
+          "mae": 0.3244494701570433,
+          "rmse": 0.37603077179212674,
+          "bias": -0.03414475062323262,
+          "nmae": 0.3244494701570433,
+          "nrmse": 0.37603077179212674
+        },
+        {
+          "model": "extra_trees_weather",
+          "entity": "farm_proxy",
+          "horizon": "all",
+          "n": 336,
+          "expected": 336,
+          "coverage": 1.0,
+          "mae": 0.26752874892780154,
+          "rmse": 0.3262415341922482,
+          "bias": -0.04523767388841177,
+          "nmae": 0.26752874892780154,
+          "nrmse": 0.3262415341922482
+        },
+        {
+          "model": "extra_trees_weather",
+          "entity": "turbine_1",
+          "horizon": "all",
+          "n": 336,
+          "expected": 336,
+          "coverage": 1.0,
+          "mae": 0.2690094095031411,
+          "rmse": 0.3234365941509682,
+          "bias": -0.04554964414989088,
+          "nmae": 0.2690094095031411,
+          "nrmse": 0.3234365941509682
+        },
+        {
+          "model": "extra_trees_weather",
+          "entity": "turbine_2",
+          "horizon": "all",
+          "n": 336,
+          "expected": 336,
+          "coverage": 1.0,
+          "mae": 0.27735940570612094,
+          "rmse": 0.33773057001606793,
+          "bias": -0.04492570362693266,
+          "nmae": 0.27735940570612094,
+          "nrmse": 0.33773057001606793
+        },
+        {
+          "model": "persistence",
+          "entity": "farm_proxy",
+          "horizon": "all",
+          "n": 336,
+          "expected": 336,
+          "coverage": 1.0,
+          "mae": 0.42492311507936503,
+          "rmse": 0.5318680986439764,
+          "bias": 0.10009176587301584,
+          "nmae": 0.42492311507936503,
+          "nrmse": 0.5318680986439764
+        },
+        {
+          "model": "persistence",
+          "entity": "turbine_1",
+          "horizon": "all",
+          "n": 336,
+          "expected": 336,
+          "coverage": 1.0,
+          "mae": 0.4233878968253968,
+          "rmse": 0.5333014700923348,
+          "bias": 0.09347718253968251,
+          "nmae": 0.4233878968253968,
+          "nrmse": 0.5333014700923348
+        },
+        {
+          "model": "persistence",
+          "entity": "turbine_2",
+          "horizon": "all",
+          "n": 336,
+          "expected": 336,
+          "coverage": 1.0,
+          "mae": 0.4276785714285714,
+          "rmse": 0.5356414897630275,
+          "bias": 0.10670634920634918,
+          "nmae": 0.4276785714285714,
+          "nrmse": 0.5356414897630275
+        }
+      ]
+    },
+    "holdout": {
+      "issues": 1,
+      "first_issue_utc": "2026-01-29T18:00:00+00:00",
+      "last_issue_utc": "2026-01-29T18:00:00+00:00",
+      "prediction_entity_rows": 432,
+      "unique_target_hours": 48,
+      "coverage_threshold": 5,
+      "overall_metrics": [
+        {
+          "model": "extra_trees",
+          "entity": "farm_proxy",
+          "horizon": "all",
+          "n": 48,
+          "expected": 48,
+          "coverage": 1.0,
+          "mae": 0.3367100247091824,
+          "rmse": 0.395795879822172,
+          "bias": -0.24268773882343345,
+          "nmae": 0.3367100247091824,
+          "nrmse": 0.395795879822172
+        },
+        {
+          "model": "extra_trees",
+          "entity": "turbine_1",
+          "horizon": "all",
+          "n": 48,
+          "expected": 48,
+          "coverage": 1.0,
+          "mae": 0.3317642387053491,
+          "rmse": 0.39248326003961226,
+          "bias": -0.24552547094030178,
+          "nmae": 0.3317642387053491,
+          "nrmse": 0.39248326003961226
+        },
+        {
+          "model": "extra_trees",
+          "entity": "turbine_2",
+          "horizon": "all",
+          "n": 48,
+          "expected": 48,
+          "coverage": 1.0,
+          "mae": 0.34165581071301565,
+          "rmse": 0.4001231861664276,
+          "bias": -0.23985000670656512,
+          "nmae": 0.34165581071301565,
+          "nrmse": 0.4001231861664276
+        },
+        {
+          "model": "extra_trees_weather",
+          "entity": "farm_proxy",
+          "horizon": "all",
+          "n": 48,
+          "expected": 48,
+          "coverage": 1.0,
+          "mae": 0.30788157861508053,
+          "rmse": 0.3418139159697211,
+          "bias": -0.10630436969116351,
+          "nmae": 0.30788157861508053,
+          "nrmse": 0.3418139159697211
+        },
+        {
+          "model": "extra_trees_weather",
+          "entity": "turbine_1",
+          "horizon": "all",
+          "n": 48,
+          "expected": 48,
+          "coverage": 1.0,
+          "mae": 0.2963781903398096,
+          "rmse": 0.33076875219286095,
+          "bias": -0.08467858972822973,
+          "nmae": 0.2963781903398096,
+          "nrmse": 0.33076875219286095
+        },
+        {
+          "model": "extra_trees_weather",
+          "entity": "turbine_2",
+          "horizon": "all",
+          "n": 48,
+          "expected": 48,
+          "coverage": 1.0,
+          "mae": 0.31999810355862596,
+          "rmse": 0.35496847736554593,
+          "bias": -0.1279301496540972,
+          "nmae": 0.31999810355862596,
+          "nrmse": 0.35496847736554593
+        },
+        {
+          "model": "persistence",
+          "entity": "farm_proxy",
+          "horizon": "all",
+          "n": 48,
+          "expected": 48,
+          "coverage": 1.0,
+          "mae": 0.38171874999999983,
+          "rmse": 0.5008343588222075,
+          "bias": 0.38171874999999983,
+          "nmae": 0.38171874999999983,
+          "nrmse": 0.5008343588222075
+        },
+        {
+          "model": "persistence",
+          "entity": "turbine_1",
+          "horizon": "all",
+          "n": 48,
+          "expected": 48,
+          "coverage": 1.0,
+          "mae": 0.3888194444444442,
+          "rmse": 0.5024510525266964,
+          "bias": 0.3888194444444442,
+          "nmae": 0.3888194444444442,
+          "nrmse": 0.5024510525266964
+        },
+        {
+          "model": "persistence",
+          "entity": "turbine_2",
+          "horizon": "all",
+          "n": 48,
+          "expected": 48,
+          "coverage": 1.0,
+          "mae": 0.3746180555555554,
+          "rmse": 0.5000866244406506,
+          "bias": 0.3746180555555554,
+          "nmae": 0.3746180555555554,
+          "nrmse": 0.5000866244406506
+        }
+      ]
+    }
+  },
+  "pre_holdout_selection": {
+    "selected_model": "extra_trees_weather",
+    "selection_mae": 0.2510404037559147,
+    "known_at_utc": "2026-01-28T19:00:00+00:00",
+    "holdout_issue_utc": "2026-01-29T18:00:00+00:00",
+    "target_overlap_count": 0,
+    "five_issues": [
+      "2026-01-22T18:00:00+00:00",
+      "2026-01-23T18:00:00+00:00",
+      "2026-01-24T18:00:00+00:00",
+      "2026-01-25T18:00:00+00:00",
+      "2026-01-26T18:00:00+00:00"
+    ],
+    "selection_timing_caveat": "Chronological subset of previously saved folds; no claim that this choice was prospectively preregistered."
+  },
+  "replay": {
+    "issues": 29,
+    "forecast_rows": 1392,
+    "unique_target_hours": 720,
+    "first_issue_utc": "2026-01-31T18:00:00+00:00",
+    "last_issue_utc": "2026-02-28T18:00:00+00:00",
+    "first_target_local": "2026-02-01T00:00:00+05:00",
+    "last_target_local": "2026-03-02T23:00:00+05:00",
+    "february_target_rows": 1320,
+    "march_target_rows": 72,
+    "last_issue_stale_hours": {
+      "turbine_1": 671.0,
+      "turbine_2": 671.0
+    },
+    "last_issue_last_observed_hour_utc": {
+      "turbine_1": "2026-01-31 18:00:00+00:00",
+      "turbine_2": "2026-01-31 18:00:00+00:00"
+    },
+    "current_source_version": "4676e85e83ed56ed37cde375feb716045755c55ae64dd394c42a4bd3fa3885ba",
+    "runs": [
+      {
+        "run_id": "a587f5347a6fc4512eec87fc",
+        "issue": "2026-01-31T18:00:00+00:00",
+        "manifest_hash_matches": true,
+        "forecast_hash_matches": true,
+        "source_version_matches_current": true,
+        "checks_passed": true,
+        "record_status_ok": true,
+        "summary_matches_manifest": true,
+        "report_max_numeric_difference": 0.0,
+        "stale_hours": {
+          "turbine_1": 0,
+          "turbine_2": 0
+        },
+        "last_observed_hour": {
+          "turbine_1": "2026-01-31 17:00:00+00:00",
+          "turbine_2": "2026-01-31 17:00:00+00:00"
+        },
+        "hourly_inputs_hash_matches": true,
+        "latest_input_matches_manifest": true,
+        "staleness_recalculated": true,
+        "weather_turbine_1_not_future": true,
+        "weather_turbine_2_not_future": true
+      },
+      {
+        "run_id": "b13dda70a30e5ec041c2cd01",
+        "issue": "2026-02-01T18:00:00+00:00",
+        "manifest_hash_matches": true,
+        "forecast_hash_matches": true,
+        "source_version_matches_current": true,
+        "checks_passed": true,
+        "record_status_ok": true,
+        "summary_matches_manifest": true,
+        "report_max_numeric_difference": 0.0,
+        "stale_hours": {
+          "turbine_1": 23.0,
+          "turbine_2": 23.0
+        },
+        "last_observed_hour": {
+          "turbine_1": "2026-01-31 18:00:00+00:00",
+          "turbine_2": "2026-01-31 18:00:00+00:00"
+        },
+        "hourly_inputs_hash_matches": true,
+        "latest_input_matches_manifest": true,
+        "staleness_recalculated": true,
+        "weather_turbine_1_not_future": true,
+        "weather_turbine_2_not_future": true
+      },
+      {
+        "run_id": "58ed95346f96328aae28205a",
+        "issue": "2026-02-02T18:00:00+00:00",
+        "manifest_hash_matches": true,
+        "forecast_hash_matches": true,
+        "source_version_matches_current": true,
+        "checks_passed": true,
+        "record_status_ok": true,
+        "summary_matches_manifest": true,
+        "report_max_numeric_difference": 0.0,
+        "stale_hours": {
+          "turbine_1": 47.0,
+          "turbine_2": 47.0
+        },
+        "last_observed_hour": {
+          "turbine_1": "2026-01-31 18:00:00+00:00",
+          "turbine_2": "2026-01-31 18:00:00+00:00"
+        },
+        "hourly_inputs_hash_matches": true,
+        "latest_input_matches_manifest": true,
+        "staleness_recalculated": true,
+        "weather_turbine_1_not_future": true,
+        "weather_turbine_2_not_future": true
+      },
+      {
+        "run_id": "29c40c6011b8e5d59609fca7",
+        "issue": "2026-02-03T18:00:00+00:00",
+        "manifest_hash_matches": true,
+        "forecast_hash_matches": true,
+        "source_version_matches_current": true,
+        "checks_passed": true,
+        "record_status_ok": true,
+        "summary_matches_manifest": true,
+        "report_max_numeric_difference": 0.0,
+        "stale_hours": {
+          "turbine_1": 71.0,
+          "turbine_2": 71.0
+        },
+        "last_observed_hour": {
+          "turbine_1": "2026-01-31 18:00:00+00:00",
+          "turbine_2": "2026-01-31 18:00:00+00:00"
+        },
+        "hourly_inputs_hash_matches": true,
+        "latest_input_matches_manifest": true,
+        "staleness_recalculated": true,
+        "weather_turbine_1_not_future": true,
+        "weather_turbine_2_not_future": true
+      },
+      {
+        "run_id": "b6c0b144a727a4127e9b4953",
+        "issue": "2026-02-04T18:00:00+00:00",
+        "manifest_hash_matches": true,
+        "forecast_hash_matches": true,
+        "source_version_matches_current": true,
+        "checks_passed": true,
+        "record_status_ok": true,
+        "summary_matches_manifest": true,
+        "report_max_numeric_difference": 0.0,
+        "stale_hours": {
+          "turbine_1": 95.0,
+          "turbine_2": 95.0
+        },
+        "last_observed_hour": {
+          "turbine_1": "2026-01-31 18:00:00+00:00",
+          "turbine_2": "2026-01-31 18:00:00+00:00"
+        },
+        "hourly_inputs_hash_matches": true,
+        "latest_input_matches_manifest": true,
+        "staleness_recalculated": true,
+        "weather_turbine_1_not_future": true,
+        "weather_turbine_2_not_future": true
+      },
+      {
+        "run_id": "909e40c5a63bae414437aba4",
+        "issue": "2026-02-05T18:00:00+00:00",
+        "manifest_hash_matches": true,
+        "forecast_hash_matches": true,
+        "source_version_matches_current": true,
+        "checks_passed": true,
+        "record_status_ok": true,
+        "summary_matches_manifest": true,
+        "report_max_numeric_difference": 0.0,
+        "stale_hours": {
+          "turbine_1": 119.0,
+          "turbine_2": 119.0
+        },
+        "last_observed_hour": {
+          "turbine_1": "2026-01-31 18:00:00+00:00",
+          "turbine_2": "2026-01-31 18:00:00+00:00"
+        },
+        "hourly_inputs_hash_matches": true,
+        "latest_input_matches_manifest": true,
+        "staleness_recalculated": true,
+        "weather_turbine_1_not_future": true,
+        "weather_turbine_2_not_future": true
+      },
+      {
+        "run_id": "83652f30921b02e6a754ed55",
+        "issue": "2026-02-06T18:00:00+00:00",
+        "manifest_hash_matches": true,
+        "forecast_hash_matches": true,
+        "source_version_matches_current": true,
+        "checks_passed": true,
+        "record_status_ok": true,
+        "summary_matches_manifest": true,
+        "report_max_numeric_difference": 0.0,
+        "stale_hours": {
+          "turbine_1": 143.0,
+          "turbine_2": 143.0
+        },
+        "last_observed_hour": {
+          "turbine_1": "2026-01-31 18:00:00+00:00",
+          "turbine_2": "2026-01-31 18:00:00+00:00"
+        },
+        "hourly_inputs_hash_matches": true,
+        "latest_input_matches_manifest": true,
+        "staleness_recalculated": true,
+        "weather_turbine_1_not_future": true,
+        "weather_turbine_2_not_future": true
+      },
+      {
+        "run_id": "da3159287aa0ba32383a0c6a",
+        "issue": "2026-02-07T18:00:00+00:00",
+        "manifest_hash_matches": true,
+        "forecast_hash_matches": true,
+        "source_version_matches_current": true,
+        "checks_passed": true,
+        "record_status_ok": true,
+        "summary_matches_manifest": true,
+        "report_max_numeric_difference": 0.0,
+        "stale_hours": {
+          "turbine_1": 167.0,
+          "turbine_2": 167.0
+        },
+        "last_observed_hour": {
+          "turbine_1": "2026-01-31 18:00:00+00:00",
+          "turbine_2": "2026-01-31 18:00:00+00:00"
+        },
+        "hourly_inputs_hash_matches": true,
+        "latest_input_matches_manifest": true,
+        "staleness_recalculated": true,
+        "weather_turbine_1_not_future": true,
+        "weather_turbine_2_not_future": true
+      },
+      {
+        "run_id": "3a946e0b51f292dbe7a19ee9",
+        "issue": "2026-02-08T18:00:00+00:00",
+        "manifest_hash_matches": true,
+        "forecast_hash_matches": true,
+        "source_version_matches_current": true,
+        "checks_passed": true,
+        "record_status_ok": true,
+        "summary_matches_manifest": true,
+        "report_max_numeric_difference": 0.0,
+        "stale_hours": {
+          "turbine_1": 191.0,
+          "turbine_2": 191.0
+        },
+        "last_observed_hour": {
+          "turbine_1": "2026-01-31 18:00:00+00:00",
+          "turbine_2": "2026-01-31 18:00:00+00:00"
+        },
+        "hourly_inputs_hash_matches": true,
+        "latest_input_matches_manifest": true,
+        "staleness_recalculated": true,
+        "weather_turbine_1_not_future": true,
+        "weather_turbine_2_not_future": true
+      },
+      {
+        "run_id": "0c7b5596063b62c25b1c5f55",
+        "issue": "2026-02-09T18:00:00+00:00",
+        "manifest_hash_matches": true,
+        "forecast_hash_matches": true,
+        "source_version_matches_current": true,
+        "checks_passed": true,
+        "record_status_ok": true,
+        "summary_matches_manifest": true,
+        "report_max_numeric_difference": 0.0,
+        "stale_hours": {
+          "turbine_1": 215.0,
+          "turbine_2": 215.0
+        },
+        "last_observed_hour": {
+          "turbine_1": "2026-01-31 18:00:00+00:00",
+          "turbine_2": "2026-01-31 18:00:00+00:00"
+        },
+        "hourly_inputs_hash_matches": true,
+        "latest_input_matches_manifest": true,
+        "staleness_recalculated": true,
+        "weather_turbine_1_not_future": true,
+        "weather_turbine_2_not_future": true
+      },
+      {
+        "run_id": "442fdc574a8b8872b54ee907",
+        "issue": "2026-02-10T18:00:00+00:00",
+        "manifest_hash_matches": true,
+        "forecast_hash_matches": true,
+        "source_version_matches_current": true,
+        "checks_passed": true,
+        "record_status_ok": true,
+        "summary_matches_manifest": true,
+        "report_max_numeric_difference": 0.0,
+        "stale_hours": {
+          "turbine_1": 239.0,
+          "turbine_2": 239.0
+        },
+        "last_observed_hour": {
+          "turbine_1": "2026-01-31 18:00:00+00:00",
+          "turbine_2": "2026-01-31 18:00:00+00:00"
+        },
+        "hourly_inputs_hash_matches": true,
+        "latest_input_matches_manifest": true,
+        "staleness_recalculated": true,
+        "weather_turbine_1_not_future": true,
+        "weather_turbine_2_not_future": true
+      },
+      {
+        "run_id": "c489bd75a2ddcf1976b01c7a",
+        "issue": "2026-02-11T18:00:00+00:00",
+        "manifest_hash_matches": true,
+        "forecast_hash_matches": true,
+        "source_version_matches_current": true,
+        "checks_passed": true,
+        "record_status_ok": true,
+        "summary_matches_manifest": true,
+        "report_max_numeric_difference": 0.0,
+        "stale_hours": {
+          "turbine_1": 263.0,
+          "turbine_2": 263.0
+        },
+        "last_observed_hour": {
+          "turbine_1": "2026-01-31 18:00:00+00:00",
+          "turbine_2": "2026-01-31 18:00:00+00:00"
+        },
+        "hourly_inputs_hash_matches": true,
+        "latest_input_matches_manifest": true,
+        "staleness_recalculated": true,
+        "weather_turbine_1_not_future": true,
+        "weather_turbine_2_not_future": true
+      },
+      {
+        "run_id": "5085570fe2a16c9098b2218b",
+        "issue": "2026-02-12T18:00:00+00:00",
+        "manifest_hash_matches": true,
+        "forecast_hash_matches": true,
+        "source_version_matches_current": true,
+        "checks_passed": true,
+        "record_status_ok": true,
+        "summary_matches_manifest": true,
+        "report_max_numeric_difference": 0.0,
+        "stale_hours": {
+          "turbine_1": 287.0,
+          "turbine_2": 287.0
+        },
+        "last_observed_hour": {
+          "turbine_1": "2026-01-31 18:00:00+00:00",
+          "turbine_2": "2026-01-31 18:00:00+00:00"
+        },
+        "hourly_inputs_hash_matches": true,
+        "latest_input_matches_manifest": true,
+        "staleness_recalculated": true,
+        "weather_turbine_1_not_future": true,
+        "weather_turbine_2_not_future": true
+      },
+      {
+        "run_id": "f239a31e6ee9dcd24169c1c6",
+        "issue": "2026-02-13T18:00:00+00:00",
+        "manifest_hash_matches": true,
+        "forecast_hash_matches": true,
+        "source_version_matches_current": true,
+        "checks_passed": true,
+        "record_status_ok": true,
+        "summary_matches_manifest": true,
+        "report_max_numeric_difference": 0.0,
+        "stale_hours": {
+          "turbine_1": 311.0,
+          "turbine_2": 311.0
+        },
+        "last_observed_hour": {
+          "turbine_1": "2026-01-31 18:00:00+00:00",
+          "turbine_2": "2026-01-31 18:00:00+00:00"
+        },
+        "hourly_inputs_hash_matches": true,
+        "latest_input_matches_manifest": true,
+        "staleness_recalculated": true,
+        "weather_turbine_1_not_future": true,
+        "weather_turbine_2_not_future": true
+      },
+      {
+        "run_id": "406d3df492f9cdba275ecf0e",
+        "issue": "2026-02-14T18:00:00+00:00",
+        "manifest_hash_matches": true,
+        "forecast_hash_matches": true,
+        "source_version_matches_current": true,
+        "checks_passed": true,
+        "record_status_ok": true,
+        "summary_matches_manifest": true,
+        "report_max_numeric_difference": 0.0,
+        "stale_hours": {
+          "turbine_1": 335.0,
+          "turbine_2": 335.0
+        },
+        "last_observed_hour": {
+          "turbine_1": "2026-01-31 18:00:00+00:00",
+          "turbine_2": "2026-01-31 18:00:00+00:00"
+        },
+        "hourly_inputs_hash_matches": true,
+        "latest_input_matches_manifest": true,
+        "staleness_recalculated": true,
+        "weather_turbine_1_not_future": true,
+        "weather_turbine_2_not_future": true
+      },
+      {
+        "run_id": "7aa2e8cbdf3386a14af80303",
+        "issue": "2026-02-15T18:00:00+00:00",
+        "manifest_hash_matches": true,
+        "forecast_hash_matches": true,
+        "source_version_matches_current": true,
+        "checks_passed": true,
+        "record_status_ok": true,
+        "summary_matches_manifest": true,
+        "report_max_numeric_difference": 0.0,
+        "stale_hours": {
+          "turbine_1": 359.0,
+          "turbine_2": 359.0
+        },
+        "last_observed_hour": {
+          "turbine_1": "2026-01-31 18:00:00+00:00",
+          "turbine_2": "2026-01-31 18:00:00+00:00"
+        },
+        "hourly_inputs_hash_matches": true,
+        "latest_input_matches_manifest": true,
+        "staleness_recalculated": true,
+        "weather_turbine_1_not_future": true,
+        "weather_turbine_2_not_future": true
+      },
+      {
+        "run_id": "1c329e2f445ff7f4a25c672e",
+        "issue": "2026-02-16T18:00:00+00:00",
+        "manifest_hash_matches": true,
+        "forecast_hash_matches": true,
+        "source_version_matches_current": true,
+        "checks_passed": true,
+        "record_status_ok": true,
+        "summary_matches_manifest": true,
+        "report_max_numeric_difference": 0.0,
+        "stale_hours": {
+          "turbine_1": 383.0,
+          "turbine_2": 383.0
+        },
+        "last_observed_hour": {
+          "turbine_1": "2026-01-31 18:00:00+00:00",
+          "turbine_2": "2026-01-31 18:00:00+00:00"
+        },
+        "hourly_inputs_hash_matches": true,
+        "latest_input_matches_manifest": true,
+        "staleness_recalculated": true,
+        "weather_turbine_1_not_future": true,
+        "weather_turbine_2_not_future": true
+      },
+      {
+        "run_id": "17b2ed79437872d7f9102bc7",
+        "issue": "2026-02-17T18:00:00+00:00",
+        "manifest_hash_matches": true,
+        "forecast_hash_matches": true,
+        "source_version_matches_current": true,
+        "checks_passed": true,
+        "record_status_ok": true,
+        "summary_matches_manifest": true,
+        "report_max_numeric_difference": 0.0,
+        "stale_hours": {
+          "turbine_1": 407.0,
+          "turbine_2": 407.0
+        },
+        "last_observed_hour": {
+          "turbine_1": "2026-01-31 18:00:00+00:00",
+          "turbine_2": "2026-01-31 18:00:00+00:00"
+        },
+        "hourly_inputs_hash_matches": true,
+        "latest_input_matches_manifest": true,
+        "staleness_recalculated": true,
+        "weather_turbine_1_not_future": true,
+        "weather_turbine_2_not_future": true
+      },
+      {
+        "run_id": "cb5edb694c53593a0407e12c",
+        "issue": "2026-02-18T18:00:00+00:00",
+        "manifest_hash_matches": true,
+        "forecast_hash_matches": true,
+        "source_version_matches_current": true,
+        "checks_passed": true,
+        "record_status_ok": true,
+        "summary_matches_manifest": true,
+        "report_max_numeric_difference": 0.0,
+        "stale_hours": {
+          "turbine_1": 431.0,
+          "turbine_2": 431.0
+        },
+        "last_observed_hour": {
+          "turbine_1": "2026-01-31 18:00:00+00:00",
+          "turbine_2": "2026-01-31 18:00:00+00:00"
+        },
+        "hourly_inputs_hash_matches": true,
+        "latest_input_matches_manifest": true,
+        "staleness_recalculated": true,
+        "weather_turbine_1_not_future": true,
+        "weather_turbine_2_not_future": true
+      },
+      {
+        "run_id": "61cf87d51ab8e5fdedf24a8b",
+        "issue": "2026-02-19T18:00:00+00:00",
+        "manifest_hash_matches": true,
+        "forecast_hash_matches": true,
+        "source_version_matches_current": true,
+        "checks_passed": true,
+        "record_status_ok": true,
+        "summary_matches_manifest": true,
+        "report_max_numeric_difference": 0.0,
+        "stale_hours": {
+          "turbine_1": 455.0,
+          "turbine_2": 455.0
+        },
+        "last_observed_hour": {
+          "turbine_1": "2026-01-31 18:00:00+00:00",
+          "turbine_2": "2026-01-31 18:00:00+00:00"
+        },
+        "hourly_inputs_hash_matches": true,
+        "latest_input_matches_manifest": true,
+        "staleness_recalculated": true,
+        "weather_turbine_1_not_future": true,
+        "weather_turbine_2_not_future": true
+      },
+      {
+        "run_id": "a2bd4a48f999f02f05f86184",
+        "issue": "2026-02-20T18:00:00+00:00",
+        "manifest_hash_matches": true,
+        "forecast_hash_matches": true,
+        "source_version_matches_current": true,
+        "checks_passed": true,
+        "record_status_ok": true,
+        "summary_matches_manifest": true,
+        "report_max_numeric_difference": 0.0,
+        "stale_hours": {
+          "turbine_1": 479.0,
+          "turbine_2": 479.0
+        },
+        "last_observed_hour": {
+          "turbine_1": "2026-01-31 18:00:00+00:00",
+          "turbine_2": "2026-01-31 18:00:00+00:00"
+        },
+        "hourly_inputs_hash_matches": true,
+        "latest_input_matches_manifest": true,
+        "staleness_recalculated": true,
+        "weather_turbine_1_not_future": true,
+        "weather_turbine_2_not_future": true
+      },
+      {
+        "run_id": "1a7c6a29ab2a3df480dc1b54",
+        "issue": "2026-02-21T18:00:00+00:00",
+        "manifest_hash_matches": true,
+        "forecast_hash_matches": true,
+        "source_version_matches_current": true,
+        "checks_passed": true,
+        "record_status_ok": true,
+        "summary_matches_manifest": true,
+        "report_max_numeric_difference": 0.0,
+        "stale_hours": {
+          "turbine_1": 503.0,
+          "turbine_2": 503.0
+        },
+        "last_observed_hour": {
+          "turbine_1": "2026-01-31 18:00:00+00:00",
+          "turbine_2": "2026-01-31 18:00:00+00:00"
+        },
+        "hourly_inputs_hash_matches": true,
+        "latest_input_matches_manifest": true,
+        "staleness_recalculated": true,
+        "weather_turbine_1_not_future": true,
+        "weather_turbine_2_not_future": true
+      },
+      {
+        "run_id": "6f370ab0d092a25764187c11",
+        "issue": "2026-02-22T18:00:00+00:00",
+        "manifest_hash_matches": true,
+        "forecast_hash_matches": true,
+        "source_version_matches_current": true,
+        "checks_passed": true,
+        "record_status_ok": true,
+        "summary_matches_manifest": true,
+        "report_max_numeric_difference": 0.0,
+        "stale_hours": {
+          "turbine_1": 527.0,
+          "turbine_2": 527.0
+        },
+        "last_observed_hour": {
+          "turbine_1": "2026-01-31 18:00:00+00:00",
+          "turbine_2": "2026-01-31 18:00:00+00:00"
+        },
+        "hourly_inputs_hash_matches": true,
+        "latest_input_matches_manifest": true,
+        "staleness_recalculated": true,
+        "weather_turbine_1_not_future": true,
+        "weather_turbine_2_not_future": true
+      },
+      {
+        "run_id": "97df28f41345484d498b0397",
+        "issue": "2026-02-23T18:00:00+00:00",
+        "manifest_hash_matches": true,
+        "forecast_hash_matches": true,
+        "source_version_matches_current": true,
+        "checks_passed": true,
+        "record_status_ok": true,
+        "summary_matches_manifest": true,
+        "report_max_numeric_difference": 0.0,
+        "stale_hours": {
+          "turbine_1": 551.0,
+          "turbine_2": 551.0
+        },
+        "last_observed_hour": {
+          "turbine_1": "2026-01-31 18:00:00+00:00",
+          "turbine_2": "2026-01-31 18:00:00+00:00"
+        },
+        "hourly_inputs_hash_matches": true,
+        "latest_input_matches_manifest": true,
+        "staleness_recalculated": true,
+        "weather_turbine_1_not_future": true,
+        "weather_turbine_2_not_future": true
+      },
+      {
+        "run_id": "543bab95858356f40966129a",
+        "issue": "2026-02-24T18:00:00+00:00",
+        "manifest_hash_matches": true,
+        "forecast_hash_matches": true,
+        "source_version_matches_current": true,
+        "checks_passed": true,
+        "record_status_ok": true,
+        "summary_matches_manifest": true,
+        "report_max_numeric_difference": 0.0,
+        "stale_hours": {
+          "turbine_1": 575.0,
+          "turbine_2": 575.0
+        },
+        "last_observed_hour": {
+          "turbine_1": "2026-01-31 18:00:00+00:00",
+          "turbine_2": "2026-01-31 18:00:00+00:00"
+        },
+        "hourly_inputs_hash_matches": true,
+        "latest_input_matches_manifest": true,
+        "staleness_recalculated": true,
+        "weather_turbine_1_not_future": true,
+        "weather_turbine_2_not_future": true
+      },
+      {
+        "run_id": "d46e5b018f0f8fd5c9eae2a2",
+        "issue": "2026-02-25T18:00:00+00:00",
+        "manifest_hash_matches": true,
+        "forecast_hash_matches": true,
+        "source_version_matches_current": true,
+        "checks_passed": true,
+        "record_status_ok": true,
+        "summary_matches_manifest": true,
+        "report_max_numeric_difference": 0.0,
+        "stale_hours": {
+          "turbine_1": 599.0,
+          "turbine_2": 599.0
+        },
+        "last_observed_hour": {
+          "turbine_1": "2026-01-31 18:00:00+00:00",
+          "turbine_2": "2026-01-31 18:00:00+00:00"
+        },
+        "hourly_inputs_hash_matches": true,
+        "latest_input_matches_manifest": true,
+        "staleness_recalculated": true,
+        "weather_turbine_1_not_future": true,
+        "weather_turbine_2_not_future": true
+      },
+      {
+        "run_id": "af6752bd03b75d71d5297438",
+        "issue": "2026-02-26T18:00:00+00:00",
+        "manifest_hash_matches": true,
+        "forecast_hash_matches": true,
+        "source_version_matches_current": true,
+        "checks_passed": true,
+        "record_status_ok": true,
+        "summary_matches_manifest": true,
+        "report_max_numeric_difference": 0.0,
+        "stale_hours": {
+          "turbine_1": 623.0,
+          "turbine_2": 623.0
+        },
+        "last_observed_hour": {
+          "turbine_1": "2026-01-31 18:00:00+00:00",
+          "turbine_2": "2026-01-31 18:00:00+00:00"
+        },
+        "hourly_inputs_hash_matches": true,
+        "latest_input_matches_manifest": true,
+        "staleness_recalculated": true,
+        "weather_turbine_1_not_future": true,
+        "weather_turbine_2_not_future": true
+      },
+      {
+        "run_id": "09fed0995d236f6c335b4f87",
+        "issue": "2026-02-27T18:00:00+00:00",
+        "manifest_hash_matches": true,
+        "forecast_hash_matches": true,
+        "source_version_matches_current": true,
+        "checks_passed": true,
+        "record_status_ok": true,
+        "summary_matches_manifest": true,
+        "report_max_numeric_difference": 0.0,
+        "stale_hours": {
+          "turbine_1": 647.0,
+          "turbine_2": 647.0
+        },
+        "last_observed_hour": {
+          "turbine_1": "2026-01-31 18:00:00+00:00",
+          "turbine_2": "2026-01-31 18:00:00+00:00"
+        },
+        "hourly_inputs_hash_matches": true,
+        "latest_input_matches_manifest": true,
+        "staleness_recalculated": true,
+        "weather_turbine_1_not_future": true,
+        "weather_turbine_2_not_future": true
+      },
+      {
+        "run_id": "638d72d758e42d7cb5b6686d",
+        "issue": "2026-02-28T18:00:00+00:00",
+        "manifest_hash_matches": true,
+        "forecast_hash_matches": true,
+        "source_version_matches_current": true,
+        "checks_passed": true,
+        "record_status_ok": true,
+        "summary_matches_manifest": true,
+        "report_max_numeric_difference": 0.0,
+        "stale_hours": {
+          "turbine_1": 671.0,
+          "turbine_2": 671.0
+        },
+        "last_observed_hour": {
+          "turbine_1": "2026-01-31 18:00:00+00:00",
+          "turbine_2": "2026-01-31 18:00:00+00:00"
+        },
+        "hourly_inputs_hash_matches": true,
+        "latest_input_matches_manifest": true,
+        "staleness_recalculated": true,
+        "weather_turbine_1_not_future": true,
+        "weather_turbine_2_not_future": true
+      }
+    ]
+  },
+  "primary_input_sha256": {
+    "reports\\data_audit.json": "9f3c84e6118c8d609f9a7be9cf3c13ad030e070adaac77c7bb5d44b5264c4612",
+    "reports\\february_replay.csv": "7ee8239bfa34ceee0c0ba9ee1eb17139b85b3562f7926781b39221fe315b6828",
+    "reports\\replay_summary.json": "e2febb408593ed2d515ef2f2041cd9f6de5939550d23a181ae48879329d68194",
+    "reports\\model_selection.json": "bc9ce9e80ec73cbec3af7fc7e7156ac901a117d8a7447c63a528cbda94c70da2",
+    "reports\\validation_observations\\folds.json": "8cc90c97d8c7e2dcc6da7b2d62288de2859b1adb9d0bab55737a0a22579e7eaa",
+    "reports\\validation_observations\\metrics.csv": "94815a92e500a1293f56c852fc94ae9a2f601b060db06dc54ff7cc9456457ae4",
+    "reports\\validation_observations\\predictions.csv": "896b5d4530f741282ab2ee6aa1f5de7dbc035270dd74661547a5f0d8ea48cf00",
+    "reports\\validation_observations\\selection.json": "4976a77ff270adc61c51a3d10932d7efe9e9b63a90905674e64df6ad8ae0accf",
+    "reports\\validation_coverage6\\folds.json": "5d48b92ca9c7611ef617216eca4da32db0d02d384e82dffd20f1c4460cb7fbc0",
+    "reports\\validation_coverage6\\metrics.csv": "577dbbd3ddf2df05e8d5ff6e787545bb7abf2f29bd8d02fcdd4bc8c25e8edcfb",
+    "reports\\validation_coverage6\\predictions.csv": "6d766fc4b9a2ac7fd99041f227a82d4c222ae976de5835174e25cc8f52383534",
+    "reports\\validation_coverage6\\selection.json": "2567487ac8c84e70d0ec603c63ebb06c31923ab37880443aa2aed67ddc0c619b",
+    "reports\\validation_weather\\folds.json": "15d3ac766fc95760ba072556bf2371ebf7576185a32cf0a8f42d833b9e557002",
+    "reports\\validation_weather\\metrics.csv": "4a509623bbf1c67fcf23015000940d9110a76ca92cca081b3eaff244471fa5a3",
+    "reports\\validation_weather\\predictions.csv": "a7a9162d643602e1fe6c6151dc53ac916b1c8dae772c98b9f61cda4ec4a489a5",
+    "reports\\validation_weather\\selection.json": "bc9ce9e80ec73cbec3af7fc7e7156ac901a117d8a7447c63a528cbda94c70da2",
+    "reports\\holdout\\folds.json": "0c5d9b40ab7bcec7607ac2a514438eeadad33d2c70ceb113c77077631b6b097c",
+    "reports\\holdout\\metrics.csv": "54877ff06371f00b5baedcac60ec6e2be9b2f9063776511787e0da1866d8669f",
+    "reports\\holdout\\predictions.csv": "872796edd562b6f7e058b1d1192e0668dd05ee1c7b446abb655d8f5f790bdabc",
+    "reports\\holdout\\selection.json": "d07f7aad190dfccbdd0163d49b0fa0275ef123de29f81947d89fc842bb52e736",
+    "reports\\pre_holdout_selection\\metrics.csv": "ea895216f2d61080cd8c2b1199018f4509ca8c2a159f477323c09c71a4fd532d",
+    "reports\\pre_holdout_selection\\selection.json": "9480c6bdec3c637c80e880913f1b2d951ca6bfa677afcacdf23347deafd30487"
+  },
+  "checks": [
+    {
+      "check": "turbine_1.audit_numeric_counts",
+      "passed": true
+    },
+    {
+      "check": "turbine_1.audit_dates",
+      "passed": true
+    },
+    {
+      "check": "turbine_1.audit_hourly_counts",
+      "passed": true
+    },
+    {
+      "check": "turbine_1.no_february_actuals",
+      "passed": true
+    },
+    {
+      "check": "turbine_1.original_desktop_bytes_match",
+      "passed": true
+    },
+    {
+      "check": "turbine_2.audit_numeric_counts",
+      "passed": true
+    },
+    {
+      "check": "turbine_2.audit_dates",
+      "passed": true
+    },
+    {
+      "check": "turbine_2.audit_hourly_counts",
+      "passed": true
+    },
+    {
+      "check": "turbine_2.no_february_actuals",
+      "passed": true
+    },
+    {
+      "check": "turbine_2.original_desktop_bytes_match",
+      "passed": true
+    },
+    {
+      "check": "raw.timestamp_alignment_matches_audit",
+      "passed": true,
+      "details": {
+        "shared_timestamps": 141357,
+        "only_turbine_1": 1003,
+        "only_turbine_2": 8142,
+        "union_timestamps": 150502,
+        "hourly_slots": 25392,
+        "valid_farm_proxy_hours": 23520
+      }
+    },
+    {
+      "check": "raw.timestamps_not_fully_equal",
+      "passed": true
+    },
+    {
+      "check": "validation_observations.metric_keys",
+      "passed": true,
+      "details": {
+        "rows": 306
+      }
+    },
+    {
+      "check": "validation_observations.all_metrics_recomputed",
+      "passed": true,
+      "details": {
+        "n": 0.0,
+        "expected": 0.0,
+        "coverage": 0.0,
+        "mae": 1.6653345369377348e-16,
+        "rmse": 1.6653345369377348e-16,
+        "bias": 1.3877787807814457e-16,
+        "nmae": 1.6653345369377348e-16,
+        "nrmse": 1.6653345369377348e-16
+      }
+    },
+    {
+      "check": "validation_observations.fold_count",
+      "passed": true
+    },
+    {
+      "check": "validation_observations.complete_forecast_grid",
+      "passed": true
+    },
+    {
+      "check": "validation_observations.horizon_matches_target",
+      "passed": true
+    },
+    {
+      "check": "validation_observations.farm_proxy.actual_missing_mask",
+      "passed": true
+    },
+    {
+      "check": "validation_observations.turbine_1.actual_missing_mask",
+      "passed": true
+    },
+    {
+      "check": "validation_observations.turbine_2.actual_missing_mask",
+      "passed": true
+    },
+    {
+      "check": "validation_observations.actuals_match_raw_csv_aggregation",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.1102230246251565e-16
+      }
+    },
+    {
+      "check": "validation_observations.fold_manifest_hashes",
+      "passed": true,
+      "details": {
+        "checked": 26,
+        "failures": []
+      }
+    },
+    {
+      "check": "validation_observations.predictions_match_original_run",
+      "passed": true,
+      "details": {
+        "checked": 78,
+        "failures": []
+      }
+    },
+    {
+      "check": "validation_coverage6.metric_keys",
+      "passed": true,
+      "details": {
+        "rows": 306
+      }
+    },
+    {
+      "check": "validation_coverage6.all_metrics_recomputed",
+      "passed": true,
+      "details": {
+        "n": 0.0,
+        "expected": 0.0,
+        "coverage": 0.0,
+        "mae": 1.6653345369377348e-16,
+        "rmse": 1.6653345369377348e-16,
+        "bias": 1.3877787807814457e-16,
+        "nmae": 1.6653345369377348e-16,
+        "nrmse": 1.6653345369377348e-16
+      }
+    },
+    {
+      "check": "validation_coverage6.fold_count",
+      "passed": true
+    },
+    {
+      "check": "validation_coverage6.complete_forecast_grid",
+      "passed": true
+    },
+    {
+      "check": "validation_coverage6.horizon_matches_target",
+      "passed": true
+    },
+    {
+      "check": "validation_coverage6.farm_proxy.actual_missing_mask",
+      "passed": true
+    },
+    {
+      "check": "validation_coverage6.turbine_1.actual_missing_mask",
+      "passed": true
+    },
+    {
+      "check": "validation_coverage6.turbine_2.actual_missing_mask",
+      "passed": true
+    },
+    {
+      "check": "validation_coverage6.actuals_match_raw_csv_aggregation",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.1102230246251565e-16
+      }
+    },
+    {
+      "check": "validation_coverage6.fold_manifest_hashes",
+      "passed": true,
+      "details": {
+        "checked": 26,
+        "failures": []
+      }
+    },
+    {
+      "check": "validation_coverage6.predictions_match_original_run",
+      "passed": true,
+      "details": {
+        "checked": 78,
+        "failures": []
+      }
+    },
+    {
+      "check": "validation_weather.metric_keys",
+      "passed": true,
+      "details": {
+        "rows": 459
+      }
+    },
+    {
+      "check": "validation_weather.all_metrics_recomputed",
+      "passed": true,
+      "details": {
+        "n": 0.0,
+        "expected": 0.0,
+        "coverage": 0.0,
+        "mae": 2.220446049250313e-16,
+        "rmse": 1.6653345369377348e-16,
+        "bias": 1.734723475976807e-16,
+        "nmae": 2.220446049250313e-16,
+        "nrmse": 1.6653345369377348e-16
+      }
+    },
+    {
+      "check": "validation_weather.fold_count",
+      "passed": true
+    },
+    {
+      "check": "validation_weather.complete_forecast_grid",
+      "passed": true
+    },
+    {
+      "check": "validation_weather.horizon_matches_target",
+      "passed": true
+    },
+    {
+      "check": "validation_weather.farm_proxy.actual_missing_mask",
+      "passed": true
+    },
+    {
+      "check": "validation_weather.turbine_1.actual_missing_mask",
+      "passed": true
+    },
+    {
+      "check": "validation_weather.turbine_2.actual_missing_mask",
+      "passed": true
+    },
+    {
+      "check": "validation_weather.actuals_match_raw_csv_aggregation",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.1102230246251565e-16
+      }
+    },
+    {
+      "check": "validation_weather.fold_manifest_hashes",
+      "passed": true,
+      "details": {
+        "checked": 21,
+        "failures": []
+      }
+    },
+    {
+      "check": "validation_weather.predictions_match_original_run",
+      "passed": true,
+      "details": {
+        "checked": 63,
+        "failures": []
+      }
+    },
+    {
+      "check": "holdout.metric_keys",
+      "passed": true,
+      "details": {
+        "rows": 459
+      }
+    },
+    {
+      "check": "holdout.all_metrics_recomputed",
+      "passed": true,
+      "details": {
+        "n": 0.0,
+        "expected": 0.0,
+        "coverage": 0.0,
+        "mae": 2.220446049250313e-16,
+        "rmse": 2.220446049250313e-16,
+        "bias": 2.220446049250313e-16,
+        "nmae": 2.220446049250313e-16,
+        "nrmse": 2.220446049250313e-16
+      }
+    },
+    {
+      "check": "holdout.fold_count",
+      "passed": true
+    },
+    {
+      "check": "holdout.complete_forecast_grid",
+      "passed": true
+    },
+    {
+      "check": "holdout.horizon_matches_target",
+      "passed": true
+    },
+    {
+      "check": "holdout.farm_proxy.actual_missing_mask",
+      "passed": true
+    },
+    {
+      "check": "holdout.turbine_1.actual_missing_mask",
+      "passed": true
+    },
+    {
+      "check": "holdout.turbine_2.actual_missing_mask",
+      "passed": true
+    },
+    {
+      "check": "holdout.actuals_match_raw_csv_aggregation",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.1102230246251565e-16
+      }
+    },
+    {
+      "check": "holdout.fold_manifest_hashes",
+      "passed": true,
+      "details": {
+        "checked": 3,
+        "failures": []
+      }
+    },
+    {
+      "check": "holdout.predictions_match_original_run",
+      "passed": true,
+      "details": {
+        "checked": 9,
+        "failures": []
+      }
+    },
+    {
+      "check": "pre_holdout_selection.metric_keys",
+      "passed": true,
+      "details": {
+        "rows": 459
+      }
+    },
+    {
+      "check": "pre_holdout_selection.all_metrics_recomputed",
+      "passed": true,
+      "details": {
+        "n": 0.0,
+        "expected": 0.0,
+        "coverage": 0.0,
+        "mae": 2.220446049250313e-16,
+        "rmse": 1.1102230246251565e-16,
+        "bias": 1.1102230246251565e-16,
+        "nmae": 2.220446049250313e-16,
+        "nrmse": 1.1102230246251565e-16
+      }
+    },
+    {
+      "check": "pre_holdout.five_issue_dates",
+      "passed": true
+    },
+    {
+      "check": "pre_holdout.selected_model",
+      "passed": true
+    },
+    {
+      "check": "pre_holdout.known_before_holdout",
+      "passed": true
+    },
+    {
+      "check": "pre_holdout.disjoint_targets",
+      "passed": true
+    },
+    {
+      "check": "seven_day_validation.overlaps_holdout_as_documented",
+      "passed": true,
+      "details": {
+        "overlapping_target_hours": 24
+      }
+    },
+    {
+      "check": "production_selection.metrics_hash",
+      "passed": true
+    },
+    {
+      "check": "production_selection.known_before_replay",
+      "passed": true
+    },
+    {
+      "check": "replay.row_and_issue_counts",
+      "passed": true
+    },
+    {
+      "check": "replay.no_duplicate_issue_target",
+      "passed": true
+    },
+    {
+      "check": "replay.issue_dates",
+      "passed": true
+    },
+    {
+      "check": "replay.complete_horizon_per_issue",
+      "passed": true
+    },
+    {
+      "check": "replay.horizon_matches_target",
+      "passed": true
+    },
+    {
+      "check": "replay.finite_in_bounds",
+      "passed": true
+    },
+    {
+      "check": "replay.equal_weight_farm_proxy",
+      "passed": true
+    },
+    {
+      "check": "replay.manifest_hash_matches",
+      "passed": true,
+      "details": {
+        "checked": 29
+      }
+    },
+    {
+      "check": "replay.forecast_hash_matches",
+      "passed": true,
+      "details": {
+        "checked": 29
+      }
+    },
+    {
+      "check": "replay.source_version_matches_current",
+      "passed": true,
+      "details": {
+        "checked": 29
+      }
+    },
+    {
+      "check": "replay.checks_passed",
+      "passed": true,
+      "details": {
+        "checked": 29
+      }
+    },
+    {
+      "check": "replay.record_status_ok",
+      "passed": true,
+      "details": {
+        "checked": 29
+      }
+    },
+    {
+      "check": "replay.summary_matches_manifest",
+      "passed": true,
+      "details": {
+        "checked": 29
+      }
+    },
+    {
+      "check": "replay.hourly_inputs_hash_matches",
+      "passed": true,
+      "details": {
+        "checked": 29
+      }
+    },
+    {
+      "check": "replay.latest_input_matches_manifest",
+      "passed": true,
+      "details": {
+        "checked": 29
+      }
+    },
+    {
+      "check": "replay.staleness_recalculated",
+      "passed": true,
+      "details": {
+        "checked": 29
+      }
+    },
+    {
+      "check": "replay.weather_turbine_1_not_future",
+      "passed": true,
+      "details": {
+        "checked": 29
+      }
+    },
+    {
+      "check": "replay.weather_turbine_2_not_future",
+      "passed": true,
+      "details": {
+        "checked": 29
+      }
+    },
+    {
+      "check": "replay.report_matches_original_forecasts",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0
+      }
+    },
+    {
+      "check": "replay.no_february_measurements_in_snapshots",
+      "passed": true
+    },
+    {
+      "check": "readme.original_documented_numeric_claims_present",
+      "passed": true,
+      "details": {
+        "missing_claims": [],
+        "note": "Data quantities were independently recalculated above; documentation may subsequently receive edits."
+      }
+    },
+    {
+      "check": "results_markdown.rounded_overall_metric_tables",
+      "passed": true,
+      "details": {
+        "checked_table_rows": 30
+      }
+    },
+    {
+      "check": "original_primary_reports_unchanged_during_check",
+      "passed": true
+    }
+  ],
+  "limitations": [
+    "CSV timezone and interval convention remain assumptions.",
+    "Equal-weight farm_proxy is dimensionless; turbine nominal capacities and normalization are not supplied.",
+    "Seven January weather folds and one holdout issue are narrow historical evidence, not season-wide validation.",
+    "Five-fold holdout split is retrospectively derived from existing predictions and has disjoint target hours; it does not prove preregistration.",
+    "Forecast snapshots retain January measurements through February; final measurement-hour end is 671 hours before the last replay issue.",
+    "Last-Modified supports preserved object-version timing but cannot reconstruct first publication history.",
+    "This check verifies stored forecast provenance timestamps, not a fresh NOAA network response."
+  ]
+}
