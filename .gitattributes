@@ -1,0 +1,2 @@
+# verify-run hashes the exact bytes of these files; preserve them on checkout.
+windforecast/*.py -text
